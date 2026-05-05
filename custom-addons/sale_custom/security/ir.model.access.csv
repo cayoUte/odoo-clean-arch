@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sale_custom_record_user,sale_custom Record User,model_sale_custom_record,base.group_user,1,1,1,0
+access_sale_custom_record_manager,sale_custom Record Manager,model_sale_custom_record,base.group_system,1,1,1,1
+

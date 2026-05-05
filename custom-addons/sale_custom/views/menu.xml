@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Top-level menu -->
+    <menuitem
+        id="menu_sale_custom_root"
+        name="Sale Custom"
+        sequence="100"/>
+
+    <!-- Sub-menu pointing to the action -->
+    <menuitem
+        id="menu_sale_custom_records"
+        name="Records"
+        parent="menu_sale_custom_root"
+        action="action_sale_custom_record"
+        sequence="10"/>
+</odoo>

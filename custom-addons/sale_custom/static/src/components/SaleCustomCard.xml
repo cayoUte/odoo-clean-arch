@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+  <!--
+    Presentational component — receives all data via props, emits events up.
+    No store access here (mirrors React presentational / container split).
+  -->
+  <t t-name="sale_custom.SaleCustomCard">
+    <div class="o_sale_custom_card p-3 border rounded">
+      <div class="d-flex justify-content-between align-items-center">
+        <span t-esc="props.record.name" class="fw-bold"/>
+        <span t-attf-class="badge bg-{{ props.record.state === 'active' ? 'success' : 'secondary' }}">
+          <t t-esc="props.record.state"/>
+        </span>
+      </div>
+      <div class="mt-2">
+        <button
+          t-if="props.record.state === 'draft'"
+          class="btn btn-sm btn-primary me-1"
+          t-on-click="() => props.onActivate(props.record.id)">
+          Activate
+        </button>
+        <button
+          t-if="props.record.state !== 'cancelled'"
+          class="btn btn-sm btn-outline-danger"
+          t-on-click="() => props.onCancel(props.record.id)">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </t>
+</templates>
+
